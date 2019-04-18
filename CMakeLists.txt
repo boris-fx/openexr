@@ -92,6 +92,10 @@ add_definitions( -DHAVE_CONFIG_H )
 
 if(NOT WIN32)
   add_definitions( -pthread )
+  if(UNIX AND NOT APPLE)
+    # See https://www.vfxplatform.com/#footnote-gcc6
+    add_definitions( -D_GLIBCXX_USE_CXX11_ABI=0 )
+  endif()
 endif()
 
 if(WIN32)
