@@ -98,11 +98,7 @@ if(NOT WIN32)
   endif()
 endif()
 
-if(WIN32)
-  set(RUNTIME_DIR bin)
-else()
-  set(RUNTIME_DIR lib)
-endif()
+set(RUNTIME_DIR lib)
 
 set(OPENEXR_LIBSUFFIX "")
 set(ILMBASE_LIBSUFFIX "")
