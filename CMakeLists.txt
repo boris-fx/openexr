@@ -52,6 +52,18 @@ if(BUILD_TESTING)
   enable_testing()
 endif()
 
+add_definitions( -DHAVE_CONFIG_H )
+
+if(NOT WIN32)
+  add_definitions( -pthread )
+  if(UNIX AND NOT APPLE)
+    # See https://www.vfxplatform.com/#footnote-gcc6
+    add_definitions( -D_GLIBCXX_USE_CXX11_ABI=0 )
+  endif()
+endif()
+
+set(RUNTIME_DIR lib)
+
 #######################################
 
 # Include these two modules without enable/disable options
