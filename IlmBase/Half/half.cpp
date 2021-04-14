@@ -245,7 +245,7 @@ operator >> (istream &is, half &h)
 //---------------------------------------
 
 HALF_EXPORT void
-half::printBits (ostream &os, half h)
+printBits (ostream &os, half h)
 {
     unsigned short b = h.bits();
 
@@ -260,7 +260,7 @@ half::printBits (ostream &os, half h)
 
 
 HALF_EXPORT void
-half::printBits (ostream &os, float f)
+printBits (ostream &os, float f)
 {
     half::uif x;
     x.f = f;
@@ -276,7 +276,7 @@ half::printBits (ostream &os, float f)
 
 
 HALF_EXPORT void
-half::printBits (char c[19], half h)
+printBits (char c[19], half h)
 {
     unsigned short b = h.bits();
 
@@ -293,7 +293,7 @@ half::printBits (char c[19], half h)
 
 
 HALF_EXPORT void
-half::printBits (char c[35], float f)
+printBits (char c[35], float f)
 {
     half::uif x;
     x.f = f;
